@@ -15,12 +15,12 @@ http {
     error_log /var/log/nginx/error.log;
 
     server {
-        listen {{first_port}};
-        server_name {{server_ip}};
+        listen 8000;
+        server_name 127.0.0.1;
 
         location ~* style.css {
         # Put path to folder with style.css. Sample: "/media/sf_prj/32_stylish_portal/dist"
-            root {{path_to_folder}};
+            root {{path_to_css_folder}};
         }
 
         location / {
@@ -29,12 +29,12 @@ http {
       }
 
     server {
-        listen {{second_port}};
-        server_name {{server_ip}};
+        listen 8080;
+        server_name 127.0.0.1;
 
         location ~* style.css {
         # Put path to folder with style.css. Sample: "/media/sf_prj/32_stylish_portal/dist"
-            root {{path_to_folder}};
+            root {{path_to_css_folder}};
         }
 
         location / {
